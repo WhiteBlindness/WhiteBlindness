@@ -13,7 +13,7 @@ TypeScript · React · Next.js · Cloudflare Workers · Python · APIs · ferram
 - **CallBrief:** triagem de avisos de financiamento de I&D com pesquisa local, conclusões citadas e avaliações offline.
 - **Roundcraft:** plataforma de análise de rondas de Counter-Strike 2, com regras no servidor e contratos de API explícitos.
 
-## Projectos em destaque
+## Projetos em destaque
 
 - **[WildfireWatch](https://github.com/WhiteBlindness/wildfire-watch)** — mapa global de incêndios com ingestão horária de dados NASA FIRMS e agrupamento geográfico. *Live*: [abrir mapa](https://wildfire-watch.duartemonteiro.workers.dev) · [repositório](https://github.com/WhiteBlindness/wildfire-watch). O feed FIRMS estava pendente durante a última verificação.
 - **[Atlas Arcade](https://github.com/WhiteBlindness/atlas-arcade)** — jogos de geografia com pontuação baseada em distâncias e dados reais. *Live*: [jogar](https://atlasarcade.app) · [repositório](https://github.com/WhiteBlindness/atlas-arcade).
