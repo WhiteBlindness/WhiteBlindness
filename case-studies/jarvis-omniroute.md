@@ -1,6 +1,6 @@
 # Jarvis / OmniRoute
 
-**Estado:** estudo de arquitectura de um sistema privado de automação e orquestração pessoal.
+**Estado:** estudo de arquitetura de um sistema privado de automação e orquestração pessoal.
 
 Jarvis é a interface de trabalho; OmniRoute decide como encaminhar tarefas para modelos e operadores especializados. O código, as configurações e os dados pessoais permanecem privados. Este texto documenta decisões de engenharia sem publicar prompts privados, credenciais, endereços internos ou detalhes de autenticação.
 
@@ -8,9 +8,9 @@ Jarvis é a interface de trabalho; OmniRoute decide como encaminhar tarefas para
 
 Usar o modelo mais caro e capaz para todas as tarefas aumenta o custo e não melhora todos os resultados. Por outro lado, delegar sem limites cria falhas difíceis de detectar e resultados que podem não ter sido verificados.
 
-O sistema separa a interpretação da tarefa da sua execução. O orquestrador decide se responde directamente, encaminha uma parte delimitada para um operador ou pede validação adicional.
+O sistema separa a interpretação da tarefa da sua execução. O orquestrador decide se responde diretamente, encaminha uma parte delimitada para um operador ou pede validação adicional.
 
-## Arquitectura
+## Arquitetura
 
 ```mermaid
 flowchart TD
@@ -42,15 +42,15 @@ A separação entre orquestração e operadores também reduz o alcance de cada 
 
 ## Memória e recuperação de conhecimento
 
-A memória é tratada como uma fonte separada, não como um bloco de texto acrescentado a todos os pedidos. Preferências estáveis, contexto de projectos e documentos de referência podem ter ciclos de vida diferentes. Para uma tarefa, a recuperação deve fornecer apenas as notas relevantes e preservar a origem do contexto.
+A memória é tratada como uma fonte separada, não como um bloco de texto acrescentado a todos os pedidos. Preferências estáveis, contexto de projetos e documentos de referência podem ter ciclos de vida diferentes. Para uma tarefa, a recuperação deve fornecer apenas as notas relevantes e preservar a origem do contexto.
 
-Esta abordagem limita o ruído, facilita a actualização da informação e reduz a exposição de dados que não são necessários. A camada de recuperação e a sua cobertura continuam em desenvolvimento; este estudo não afirma que exista um serviço genérico de RAG concluído.
+Esta abordagem limita o ruído, facilita a atualização da informação e reduz a exposição de dados que não são necessários. A camada de recuperação e a sua cobertura continuam em desenvolvimento; este estudo não afirma que exista um serviço genérico de RAG concluído.
 
 ## Modos de operação
 
 O desenho distingue três necessidades:
 
-- **Normal:** recursos e rotas adequados a tarefas interactivas e trabalho mais exigente.
+- **Normal:** recursos e rotas adequados a tarefas interativas e trabalho mais exigente.
 - **Leve ou em segundo plano:** tarefas delimitadas com menor consumo e concorrência.
 - **Jogo:** reduz ou suspende trabalho que possa competir por recursos enquanto decorre uma sessão de jogo.
 
@@ -58,9 +58,9 @@ O modo de jogo existe para controlar a utilização de recursos, não para mudar
 
 ## Aprovação e integrações
 
-O sistema pode automatizar trabalho reversível e de baixo risco. Acções externas, sensíveis ou com custo relevante devem parar num ponto de aprovação explícita. A aprovação fica junto da acção, para que o utilizador saiba o que será executado.
+O sistema pode automatizar trabalho reversível e de baixo risco. Acções externas, sensíveis ou com custo relevante devem parar num ponto de aprovação explícita. A aprovação fica junto da ação, para que o utilizador saiba o que será executado.
 
-As integrações são adaptadores em torno do orquestrador. A arquitectura considera automação de páginas e do navegador, notificações, uma interface de mensagens, gestão de conhecimento pessoal, fluxos de trabalho com livros electrónicos, impressão 3D e automação de projectos. Estes exemplos descrevem superfícies de integração, não significam que todos os fluxos estejam concluídos ou activos.
+As integrações são adaptadores em torno do orquestrador. A arquitetura considera automação de páginas e do navegador, notificações, uma interface de mensagens, gestão de conhecimento pessoal, fluxos de trabalho com livros eletrónicos, impressão 3D e automação de projetos. Estes exemplos descrevem superfícies de integração, não significam que todos os fluxos estejam concluídos ou ativos.
 
 ## Estado do trabalho
 
@@ -68,14 +68,14 @@ As integrações são adaptadores em torno do orquestrador. A arquitectura consi
 - **Em desenvolvimento:** prontidão das rotas de execução, cobertura da verificação e recuperação selectiva de contexto.
 - **Em exploração ou planeado:** integrações adicionais, incluindo mensagens, notificações e fluxos de trabalho pessoais especializados.
 
-A execução de uma rota depende da configuração local. Por isso, este caso de estudo descreve a arquitectura e as decisões, não promete disponibilidade contínua nem apresenta código privado como prova pública.
+A execução de uma rota depende da configuração local. Por isso, este caso de estudo descreve a arquitetura e as decisões, não promete disponibilidade contínua nem apresenta código privado como prova pública.
 
 ## Decisões de engenharia
 
 - **Orquestrador separado dos operadores:** mantém um único responsável pelo objectivo e permite limitar cada tarefa delegada.
 - **Modelos de menor custo para trabalho delimitado:** reserva recursos mais capazes para síntese, ambiguidades e escalada.
-- **Verificação antes da integração:** impede que uma resposta do operador passe directamente por resultado confirmado.
-- **Aprovação junto das acções sensíveis:** preserva a autonomia em tarefas seguras e mantém controlo humano nas acções de maior impacto.
-- **Memória modular:** recupera contexto por relevância e mantém separadas preferências, informação de projecto e documentos.
+- **Verificação antes da integração:** impede que uma resposta do operador passe diretamente por resultado confirmado.
+- **Aprovação junto das ações sensíveis:** preserva a autonomia em tarefas seguras e mantém controlo humano nas ações de maior impacto.
+- **Memória modular:** recupera contexto por relevância e mantém separadas preferências, informação de projeto e documentos.
 - **Degradação controlada:** rotas indisponíveis devem produzir uma alternativa permitida, uma escalada ou uma falha explícita, nunca uma falsa confirmação.
 - **Modo de jogo:** reconhece que um assistente pessoal também tem de respeitar os recursos necessários a outras actividades.
