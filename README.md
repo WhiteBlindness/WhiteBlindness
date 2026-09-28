@@ -19,13 +19,12 @@ TypeScript · React · Next.js · Cloudflare Workers · Python · APIs · ferram
 - **[Atlas Arcade](https://github.com/WhiteBlindness/atlas-arcade)** — jogos de geografia com pontuação baseada em distâncias e dados reais. *Live*: [jogar](https://atlasarcade.app) · [repositório](https://github.com/WhiteBlindness/atlas-arcade).
 - **[CallBrief](https://github.com/WhiteBlindness/callbrief)** — ferramenta Python que compara um perfil com um aviso e liga cada conclusão à evidência documental. *Protótipo funcional*: [código, testes e avaliações](https://github.com/WhiteBlindness/callbrief).
 
-## Outros projectos
+## Outros projetos
 
 - **[Murdoku / Alibi](https://github.com/WhiteBlindness/murdoku)** — puzzle de dedução com geração procedural, solver TypeScript e jogo offline. [Demonstração](https://murdoku-seven.vercel.app), publicada como Alibi.
-- **[Roundcraft](https://github.com/WhiteBlindness/roundcraft)** — arquitectura multijogador em Cloudflare Workers, Hono, Zod e D1. *Em desenvolvimento*, sem demonstração pública verificada.
+- **[Roundcraft](https://github.com/WhiteBlindness/roundcraft)** — arquitetura multijogador em Cloudflare Workers, Hono, Zod e D1. *Em desenvolvimento*, sem demonstração pública verificada.
 - **[OmniQuiz](https://github.com/WhiteBlindness/omniquiz)** — jogo de perguntas com pontuação no servidor e progressão local. [Demonstração](https://omniquiz-nine.vercel.app).
 
 ## Trabalho privado
 
-**Jarvis / OmniRoute** — sistema privado de automação e orquestração. O [estudo de arquitectura](https://github.com/WhiteBlindness/WhiteBlindness/blob/main/case-studies/jarvis-omniroute.md) descreve os princípios e as decisões de engenharia, sem publicar o código privado.
-
+**Jarvis / OmniRoute** — sistema privado de automação e orquestração. O [estudo de arquitetura](https://github.com/WhiteBlindness/WhiteBlindness/blob/main/case-studies/jarvis-omniroute.md) descreve os princípios e as decisões de engenharia, sem publicar o código privado.
